@@ -5,7 +5,9 @@
 use std::fmt;
 
 pub const SUCCESS_CODE_U32: u32 = 0;
+pub const SUCCESS_CODE_U8: u8 = 0;
 pub const ERROR_CODE_U32: u32 = 1;
+pub const ERROR_CODE_U8: u8 = 1;
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub enum OpCode {
