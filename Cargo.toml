@@ -2,5 +2,15 @@
 name = "gistyr-lib"
 version = "0.1.0"
 edition = "2024"
+rust-version = "1.85.1"
+authors = ["Gistyr LLC <contact@gistyr.dev>"]
+description = "Library of small tools and helpers"
+readme = "README.md"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/Gistyr/gistyr-lib"
+homepage = "https://github.com/Gistyr/gistyr-lib"
+documentation = "https://docs.rs/gistyr-lib"   
+keywords = ["result", "error", "status", "opcode"]
+categories = ["development-tools", "rust-patterns"]
 
 [dependencies]
