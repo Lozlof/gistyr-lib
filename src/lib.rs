@@ -15,10 +15,29 @@ pub const ERROR_CODE_U16: u16 = 1;
 pub const ERROR_CODE_U8: u8 = 1;
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
+pub enum Int {
+    U8(u8),
+    U16(u16),
+    U32(u32),
+    U64(u64),
+}
+impl fmt::Display for Int {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        match self {
+            Self::U8(v)  => write!(f, "{}", v),
+            Self::U16(v) => write!(f, "{}", v),
+            Self::U32(v) => write!(f, "{}", v),
+            Self::U64(v) => write!(f, "{}", v),
+        }
+    }
+}
+
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub enum OpCode {
     Null,
     Authenticated,
     NotAuthenticated,
+    TwoInts(Int, Int),
 }
 impl fmt::Display for OpCode {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
@@ -26,6 +45,7 @@ impl fmt::Display for OpCode {
             Self::Null => write!(f, "Null"),
             Self::Authenticated => write!(f, "Authenticated"),
             Self::NotAuthenticated => write!(f, "NotAuthenticated"),
+            Self::TwoInts(a, b) => write!(f, "TwoInts({}, {})", a, b),
         }
     }
 }
