@@ -17,11 +17,15 @@ pub const ERROR_CODE_U8: u8 = 1;
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub enum OpCode {
     Null,
+    Authenticated,
+    NotAuthenticated,
 }
 impl fmt::Display for OpCode {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         match self {
             Self::Null => write!(f, "Null"),
+            Self::Authenticated => write!(f, "Authenticated"),
+            Self::NotAuthenticated => write!(f, "NotAuthenticated"),
         }
     }
 }
