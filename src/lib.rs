@@ -48,6 +48,8 @@ pub enum OpCode {
     TwoInts(Int, Int),
     ThreeInts(Int, Int, Int),
     FourInts(Int, Int, Int, Int),
+    FiveInts(Int, Int, Int, Int, Int),
+    SixInts(Int, Int, Int, Int, Int, Int),
 }
 impl fmt::Display for OpCode {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
@@ -66,6 +68,8 @@ impl fmt::Display for OpCode {
             Self::TwoInts(a, b) => write!(f, "TwoInts({}, {})", a, b),
             Self::ThreeInts(a, b, c) => write!(f, "ThreeInts({}, {}, {})", a, b, c),
             Self::FourInts(a, b, c, d) => write!(f, "FourInts({}, {}, {}, {})", a, b, c, d),
+            Self::FiveInts(a, b, c, d, e) => write!(f, "FiveInts({}, {}, {}, {}, {})", a, b, c, d, e),
+            Self::SixInts(a, b, c, d, e, g) => write!(f, "SixInts({}, {}, {}, {}, {}, {})", a, b, c, d, e, g),
         }
     }
 }
